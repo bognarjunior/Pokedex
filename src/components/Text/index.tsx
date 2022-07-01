@@ -1,10 +1,10 @@
-import React, { PropsWithChildren } from 'react';
-import { TextProps as RNTextProps } from "react-native";
+import React, {PropsWithChildren} from 'react';
+import {TextProps as RNTextProps} from 'react-native';
 
-import { Theme } from "../../styles/styled";
-import theme from "../../styles/theme";
+import {Theme} from '../../styles/styled';
+import theme from '../../styles/theme';
 
-import {Container} from './style'
+import {Container} from './styles';
 
 export type TextProps = RNTextProps & {
   variant?: keyof Theme['textVariantes'];
@@ -22,10 +22,22 @@ const Text = ({
   ...rest
 }: PropsWithChildren<TextProps>) => {
   return (
-    <Container>
-
+    <Container
+      theme={theme}
+      variant={variant}
+      color={color}
+      bold={bold}
+      textAlign={textAlign}
+      {...rest}>
+      {children}
     </Container>
   );
+};
+
+Text.defaultProps = {
+  variant: 'body3',
+  color: theme.colors.black,
+  bold: false,
 };
 
 export default Text;

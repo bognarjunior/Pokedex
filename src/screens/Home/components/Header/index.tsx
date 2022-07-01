@@ -1,3 +1,4 @@
+import React from 'react';
 import pokeball from '../../../../../assets/pokeball-transparent.jpg';
 
 import {Container, IconBall} from './styles';

@@ -1,11 +1,12 @@
-import {Text} from 'react-native';
+import React from 'react';
+import Text from './../../../../components/Text';
 
 import {Container} from './styles';
 
 const Title = () => {
   return (
     <Container>
-      <Text>Pokédex</Text>
+      <Text bold>Pokédex</Text>
       <Text>Encontre o teu Pokémon</Text>
     </Container>
   );

@@ -1,9 +1,9 @@
 import styled from 'styled-components/native';
-
+import theme from '../../styles/theme';
 export const Container = styled.SafeAreaView`
   flex: 1;
   flex-direction: column;
-  background-color: ${({theme}) => theme.colors.white};
+  background-color: ${theme.colors.white};
 `;
 
 export const Content = styled.View`
