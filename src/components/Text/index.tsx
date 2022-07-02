@@ -23,7 +23,6 @@ const Text = ({
 }: PropsWithChildren<TextProps>) => {
   return (
     <Container
-      theme={theme}
       variant={variant}
       color={color}
       bold={bold}

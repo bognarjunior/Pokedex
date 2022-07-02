@@ -3,6 +3,7 @@ import {List, Container, Content} from './styles';
 
 import Header from './components/Header';
 import Title from './components/Title';
+
 const Home = ({navigation}) => {
   return (
     <Container>
