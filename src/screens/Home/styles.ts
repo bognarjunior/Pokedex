@@ -15,3 +15,7 @@ export const List = styled.FlatList`
   padding-top: 10px;
   margin-top: 20px;
 `;
+
+export const ContentLoading = styled.View`
+  margin-top: 40px;
+`;

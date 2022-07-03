@@ -99,7 +99,7 @@ class PokemonClient {
           ability: {
             name: capitalizeFirstLetter(ability.name),
             url: ability.url,
-          },,
+          },
         } as Ability;
       });
 
