@@ -5,6 +5,11 @@ import theme from './src/styles/theme';
 import ReactQueryProvider from './src/services/query';
 
 export default function App() {
+  if (__DEV__) {
+    import('./ReactotronConfig').then(() =>
+      console.log('Reactotron Configured'),
+    );
+  }
   return (
     <ReactQueryProvider>
       <ThemeProvider theme={theme}>
