@@ -1,24 +1,23 @@
 import React from 'react';
 import Text from '../../../components/Text';
 
-import { ActivityIndicator } from 'react-native';
+import {ActivityIndicator} from 'react-native';
 import EvolutionSection from './EvolutionSection';
-import { Content, Title } from './styles';
-import { PokemonEntity } from '../../../services/pokemons/types';
-import { useEvolution } from '../../../services/pokemons/useEvolution';
-import { POKEMON_TYPE_COLORS } from '../../../constants';
+import {Content, Title} from './styles';
+import {PokemonEntity} from '../../../services/pokemons/types';
+import {useEvolution} from '../../../services/pokemons/useEvolution';
+import {POKEMON_TYPE_COLORS} from '../../../constants';
 interface Props {
   pokemon: PokemonEntity;
 }
-const Evolution = ({ pokemon }: Props) => {
-  const { evolutions, isLoading } = useEvolution(pokemon.id);
+const Evolution = ({pokemon}: Props) => {
+  const {evolutions, isLoading} = useEvolution(pokemon.id);
 
   return (
     <>
       <Title
         bold
-        color={POKEMON_TYPE_COLORS[pokemon.types[0].type.name.toLowerCase()]}
-      >
+        color={POKEMON_TYPE_COLORS[pokemon.types[0].type.name.toLowerCase()]}>
         Evolução
       </Title>
       {isLoading ? (

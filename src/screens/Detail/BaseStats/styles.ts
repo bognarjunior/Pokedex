@@ -25,17 +25,17 @@ export const StatLine = styled.View`
   flex: 1;
   overflow: hidden;
   height: 3px;
-  background: ${({ theme }) => theme.colors.lightGrey};
+  background: ${({theme}) => theme.colors.lightGrey};
   margin-left: 16px;
 `;
 
 export const StatValue = styled.View<StatValueProps>`
   height: 3px;
-  background: ${({ backgroundColor }) => backgroundColor};
-  width: ${(props) => props.width}%;
+  background: ${({backgroundColor}) => backgroundColor};
+  width: ${props => props.width}%;
 `;
 
-export const Title = styled(Text)<{ color: string }>`
-  color: ${({ color }) => color};
+export const Title = styled(Text)<{color: string}>`
+  color: ${({color}) => color};
   margin-bottom: 20px;
 `;

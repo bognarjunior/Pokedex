@@ -1,10 +1,10 @@
 import styled from 'styled-components/native';
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 
 export const Container = styled.View`
   border-bottom-width: ${StyleSheet.hairlineWidth}px;
   border-style: solid;
-  border-color: ${({ theme }) => theme.colors.lightGrey};
+  border-color: ${({theme}) => theme.colors.lightGrey};
   padding-bottom: 32px;
   margin-bottom: 32px;
 

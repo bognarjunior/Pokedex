@@ -4,9 +4,9 @@ export const Section = styled.View`
   margin-bottom: 32px;
 `;
 
-export const SectionTitle = styled.Text<{ color: string }>`
+export const SectionTitle = styled.Text<{color: string}>`
   margin-bottom: 8px;
-  color: ${({ color }) => color};
+  color: ${({color}) => color};
   font-size: 18px;
   font-weight: 700;
 `;

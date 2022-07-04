@@ -1,10 +1,10 @@
 import React from 'react';
-import {Icon } from 'react-native-vector-icons';
-import { useTheme } from 'styled-components';
+import {Icon} from 'react-native-vector-icons';
+import {useTheme} from 'styled-components';
 
 import Text from '../../../../components/Text';
 
-import { Container, Pokemon, PokemonImage, MinLevel } from './styles';
+import {Container, Pokemon, PokemonImage, MinLevel} from './styles';
 
 type EvolutionSectionProps = {
   firstImage: string;
@@ -19,26 +19,27 @@ const EvolutionSection = ({
   firstName,
   secondImage,
   secondName,
-  minLevel
+  minLevel,
 }: EvolutionSectionProps) => {
-  const { colors } = useTheme();
+  const {colors} = useTheme();
 
   return (
     <Container>
       <Pokemon>
-        <PokemonImage source={{ uri: firstImage }} />
+        <PokemonImage source={{uri: firstImage}} />
         <Text>{firstName}</Text>
       </Pokemon>
 
       <MinLevel>
-        <Icon name="arrow-right" size={20} color={colors.grey} />
-        <Text bold style={{ marginTop: 8 }}>
+        {//<Icon name="arrow-right" size={20} color={colors.grey} />
+        }
+        <Text bold style={{marginTop: 8}}>
           Lvl {minLevel}
         </Text>
       </MinLevel>
 
       <Pokemon>
-        <PokemonImage source={{ uri: secondImage }} />
+        <PokemonImage source={{uri: secondImage}} />
         <Text>{secondName}</Text>
       </Pokemon>
     </Container>

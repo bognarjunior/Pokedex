@@ -1,13 +1,13 @@
-import React, { useMemo } from 'react';
-import { View } from 'react-native';
-import { Foundation as Icon } from 'react-native-vector-icons';
+import React, {useMemo} from 'react';
+import {View} from 'react-native';
+import {Foundation as Icon} from 'react-native-vector-icons';
 
 import Text from '../../../components/Text';
 
 import {
   convertValues,
   getPokemonGenderStats,
-  replaceString
+  replaceString,
 } from '../../../utils';
 
 import {
@@ -17,16 +17,16 @@ import {
   SectionSubtitle,
   SectionText,
   SectionItem,
-  Container
+  Container,
 } from './styles';
-import { POKEMON_TYPE_COLORS } from '../../../constants';
-import { PokemonEntity } from '../../../services/pokemons/types';
+import {POKEMON_TYPE_COLORS} from '../../../constants';
+import {PokemonEntity} from '../../../services/pokemons/types';
 
 interface Props {
   pokemon: PokemonEntity;
 }
 
-const About = ({ pokemon }: Props) => {
+const About = ({pokemon}: Props) => {
   const pokemonFormatted = useMemo(() => {
     return {
       ...pokemon,
@@ -35,7 +35,7 @@ const About = ({ pokemon }: Props) => {
       heightInFeet: convertValues.decimeterToFeet(pokemon.height),
       weightInKilograms: convertValues.hectogramsToKilograms(pokemon.weight),
       weightInPounds: convertValues.hectogramsToPounds(pokemon.weight),
-      abilitesFormatted: pokemon.abilites.map((item) => item.ability.name)
+      abilitesFormatted: pokemon.abilites.map(item => item.ability.name),
     };
   }, [pokemon]);
 
@@ -50,8 +50,7 @@ const About = ({ pokemon }: Props) => {
 
       <Section>
         <SectionTitle
-          color={POKEMON_TYPE_COLORS[pokemon.types[0].type.name.toLowerCase()]}
-        >
+          color={POKEMON_TYPE_COLORS[pokemon.types[0].type.name.toLowerCase()]}>
           Pokédex Dados
         </SectionTitle>
 
@@ -84,8 +83,7 @@ const About = ({ pokemon }: Props) => {
 
       <Section>
         <SectionTitle
-          color={POKEMON_TYPE_COLORS[pokemon.types[0].type.name.toLowerCase()]}
-        >
+          color={POKEMON_TYPE_COLORS[pokemon.types[0].type.name.toLowerCase()]}>
           Training
         </SectionTitle>
 
@@ -100,8 +98,7 @@ const About = ({ pokemon }: Props) => {
 
       <Section>
         <SectionTitle
-          color={POKEMON_TYPE_COLORS[pokemon.types[0].type.name.toLowerCase()]}
-        >
+          color={POKEMON_TYPE_COLORS[pokemon.types[0].type.name.toLowerCase()]}>
           Reprodução
         </SectionTitle>
 
@@ -110,19 +107,19 @@ const About = ({ pokemon }: Props) => {
             <Text bold>Gênero</Text>
           </SectionSubtitle>
 
-          {pokemonGendersRate.map((gender) => (
-            <SectionText key={gender.gender} style={{ marginRight: 16 }}>
+          {pokemonGendersRate.map(gender => (
+            <SectionText key={gender.gender} style={{marginRight: 16}}>
               {gender.gender === 'genderless' ? (
-                <Text style={{ fontWeight: 'bold' }}>sem sexo</Text>
+                <Text style={{fontWeight: 'bold'}}>sem sexo</Text>
               ) : (
                 <>
-                  <Icon
+                  {/* <Icon
                     name={
                       gender.gender === 'male' ? 'male-symbol' : 'female-symbol'
                     }
                     color={gender.gender === 'male' ? '#6890F0' : '#EE99AC'}
                     size={16}
-                  />
+                  /> */}
                   {'  '}
                   {gender.rate}%
                 </>
@@ -136,8 +133,8 @@ const About = ({ pokemon }: Props) => {
             <Text bold>Egg Groups</Text>
           </SectionSubtitle>
 
-          {pokemon.egg_groups.map((egg_group) => (
-            <SectionText key={egg_group.url} style={{ marginRight: 8 }}>
+          {pokemon.egg_groups.map(egg_group => (
+            <SectionText key={egg_group.url} style={{marginRight: 8}}>
               {egg_group.name}
             </SectionText>
           ))}

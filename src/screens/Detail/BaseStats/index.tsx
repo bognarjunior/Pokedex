@@ -1,34 +1,33 @@
 import React from 'react';
 import Text from '../../../components/Text';
-import { POKEMON_TYPE_COLORS } from '../../../constants';
-import { PokemonEntity } from '../../../services/pokemons/types';
+import {POKEMON_TYPE_COLORS} from '../../../constants';
+import {PokemonEntity} from '../../../services/pokemons/types';
 
-import { Stat, StatGraph, StatLine, StatValue, Title } from './styles';
+import {Stat, StatGraph, StatLine, StatValue, Title} from './styles';
 
 interface Props {
   pokemon: PokemonEntity;
 }
-const BaseStats = ({ pokemon }: Props) => {
+const BaseStats = ({pokemon}: Props) => {
   return (
     <>
       <Title
         bold
-        color={POKEMON_TYPE_COLORS[pokemon.types[0].type.name.toLowerCase()]}
-      >
+        color={POKEMON_TYPE_COLORS[pokemon.types[0].type.name.toLowerCase()]}>
         Estatísticas
       </Title>
-      {pokemon.stats.map((stat) => (
+      {pokemon.stats.map(stat => (
         <Stat key={stat.stat.url}>
-          <Text bold style={{ width: 100 }}>
+          <Text bold style={{width: 100}}>
             {stat.stat.name}
           </Text>
 
           <StatGraph>
-            <Text variant="body3">{stat.base_stat}</Text>
+            <Text variant="body3">{stat.baseStat}</Text>
 
             <StatLine>
               <StatValue
-                width={stat.base_stat}
+                width={stat.baseStat}
                 backgroundColor={
                   POKEMON_TYPE_COLORS[pokemon.types[0].type.name.toLowerCase()]
                 }

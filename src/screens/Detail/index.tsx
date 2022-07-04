@@ -75,6 +75,84 @@ const Detail = ({route}: Props) => {
 
   return (
     <SafeAreaView>
+      <View style={{height: 300}}>
+        <SectionAbout>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            {//<Icon name="arrow-left" size={24} color="white" />
+            }
+          </TouchableOpacity>
+
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              marginTop: 20,
+              marginLeft: 20,
+            }}>
+            <Animated.Image
+              style={{height: 120, width: 120, top: translateY}}
+              source={{
+                uri: pokemon.image,
+              }}
+            />
+
+            <ContentInfo>
+              <Text variant="caption"> #{pokemon.id}</Text>
+              <Text variant="body1" bold color="white">
+                {pokemon.name}
+              </Text>
+              <ContentType horizontal>
+                {pokemon.types.map(type => (
+                  <Type
+                    backgroundColor={
+                      POKEMON_TYPE_COLORS[type.type.name.toLowerCase()]
+                    }>
+                    <Text color="white" variant="caption">
+                      {type.type.name}
+                    </Text>
+                  </Type>
+                ))}
+              </ContentType>
+            </ContentInfo>
+          </View>
+        </SectionAbout>
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'flex-end',
+            marginBottom: 20,
+          }}>
+          <Tabs style={{}}>
+            {tabs.map((tab, index) => {
+              return (
+                <TabButton key={index} onPress={() => handleChangeSlide(index)}>
+                  {tabActive === index && <ImageBall source={pokeballIcon} />}
+                  <Text style={{color: '#fff', fontWeight: '700'}}>
+                    {tab.name}
+                  </Text>
+                </TabButton>
+              );
+            })}
+          </Tabs>
+        </View>
+      </View>
+      <Container>
+      <Animated.ScrollView
+          ref={scrollViewRef}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          snapToInterval={width}
+          decelerationRate="fast"
+          bounces={false}>
+          {tabs.map(({slide: Slide}, index) => (
+            <SlideWrapper key={index}>
+              <Slide pokemon={pokemon} />
+            </SlideWrapper>
+          ))}
+        </Animated.ScrollView>
+      </Container>
+    </SafeAreaView>
+    /*  <SafeAreaView>
       <LinearGradient
         start={{x: 0.8, y: 0.2}}
         colors={[
@@ -162,7 +240,7 @@ const Detail = ({route}: Props) => {
           ))}
         </Animated.ScrollView>
       </Container>
-    </SafeAreaView>
+    </SafeAreaView> */
   );
 };
 
