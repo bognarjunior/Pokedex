@@ -2,7 +2,7 @@ import React, {useCallback, useRef, useState, useEffect} from 'react';
 import {Animated, Dimensions, ScrollView} from 'react-native';
 import {SafeAreaView, View, TouchableOpacity} from 'react-native';
 import {Icon} from 'react-native-vector-icons';
-import {LinearGradient} from 'react-native-linear-gradient';
+import LinearGradient from 'react-native-linear-gradient';
 import Text from '../../components/Text';
 import pokeballIcon from '../../../assets/pokeball-transparent.jpg';
 import {tabs} from './tabs';
@@ -75,7 +75,16 @@ const Detail = ({route}: Props) => {
 
   return (
     <SafeAreaView>
-      <View style={{height: 300}}>
+      <LinearGradient
+        start={{x: 0.8, y: 0.2}}
+        colors={[
+          lighten(
+            0.2,
+            POKEMON_TYPE_COLORS[pokemon.types[0].type.name.toLowerCase()],
+          ),
+          POKEMON_TYPE_COLORS[pokemon.types[0].type.name.toLowerCase()],
+        ]}
+        style={{height: 300}}>
         <SectionAbout>
           <TouchableOpacity onPress={() => navigation.goBack()}>
             {//<Icon name="arrow-left" size={24} color="white" />
@@ -135,7 +144,7 @@ const Detail = ({route}: Props) => {
             })}
           </Tabs>
         </View>
-      </View>
+      </LinearGradient>
       <Container>
       <Animated.ScrollView
           ref={scrollViewRef}
