@@ -10,6 +10,7 @@ import {useNavigation} from '@react-navigation/native';
 import Reactotron from 'reactotron-react-native';
 import {
   Container,
+  ContainerImage,
   Tabs,
   TabButton,
   SlideWrapper,
@@ -91,13 +92,7 @@ const Detail = ({route}: Props) => {
             }
           </TouchableOpacity>
 
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              marginTop: 20,
-              marginLeft: 20,
-            }}>
+          <ContainerImage>
             <Animated.Image
               style={{height: 120, width: 120, top: translateY}}
               source={{
@@ -123,7 +118,7 @@ const Detail = ({route}: Props) => {
                 ))}
               </ContentType>
             </ContentInfo>
-          </View>
+          </ContainerImage>
         </SectionAbout>
         <View
           style={{
@@ -161,95 +156,6 @@ const Detail = ({route}: Props) => {
         </Animated.ScrollView>
       </Container>
     </SafeAreaView>
-    /*  <SafeAreaView>
-      <LinearGradient
-        start={{x: 0.8, y: 0.2}}
-        colors={[
-          lighten(
-            0.2,
-            POKEMON_TYPE_COLORS[pokemon.types[0].type.name.toLowerCase()],
-          ),
-          POKEMON_TYPE_COLORS[pokemon.types[0].type.name.toLowerCase()],
-        ]}
-        style={{height: 300}}>
-        <SectionAbout>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
-            {
-              //<Icon name="arrow-left" size={24} color="white" />
-            }
-          </TouchableOpacity>
-
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              marginTop: 20,
-              marginLeft: 20,
-            }}>
-            <Animated.Image
-              style={{height: 120, width: 120, top: translateY}}
-              source={{
-                uri: pokemon.image,
-              }}
-            />
-
-            <ContentInfo>
-              <Text variant="caption"> #{pokemon.id}</Text>
-              <Text variant="body1" bold color="white">
-                {pokemon.name}
-              </Text>
-              <ContentType horizontal>
-                {pokemon.types.map(type => (
-                  <Type
-                    backgroundColor={
-                      POKEMON_TYPE_COLORS[type.type.name.toLowerCase()]
-                    }>
-                    <Text color="white" variant="caption">
-                      {type.type.name}
-                    </Text>
-                  </Type>
-                ))}
-              </ContentType>
-            </ContentInfo>
-          </View>
-        </SectionAbout>
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'flex-end',
-            marginBottom: 20,
-          }}>
-          <Tabs style={{}}>
-            {tabs.map((tab, index) => {
-              return (
-                <TabButton key={index} onPress={() => handleChangeSlide(index)}>
-                  {tabActive === index && <ImageBall source={pokeballIcon} />}
-                  <Text style={{color: '#fff', fontWeight: '700'}}>
-                    {tab.name}
-                  </Text>
-                </TabButton>
-              );
-            })}
-          </Tabs>
-        </View>
-      </LinearGradient>
-
-      <Container style={{}}>
-        <Animated.ScrollView
-          ref={scrollViewRef}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          snapToInterval={width}
-          decelerationRate="fast"
-          bounces={false}>
-          {tabs.map(({slide: Slide}, index) => (
-            <SlideWrapper key={index}>
-              <Slide pokemon={pokemon} />
-            </SlideWrapper>
-          ))}
-        </Animated.ScrollView>
-      </Container>
-    </SafeAreaView> */
   );
 };
 

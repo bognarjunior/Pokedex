@@ -17,6 +17,14 @@ export const Container = styled(Animated.View)`
   padding: 16px 0;
   top: -30px;
 `;
+
+export const ContainerImage = styled.View`
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 20px;
+`;
+
 export const ImageBall = styled.Image`
   width: 50px;
   height: 50px;
