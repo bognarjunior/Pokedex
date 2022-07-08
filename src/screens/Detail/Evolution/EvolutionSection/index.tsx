@@ -1,5 +1,5 @@
 import React from 'react';
-import {Icon} from 'react-native-vector-icons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import {useTheme} from 'styled-components';
 
 import Text from '../../../../components/Text';
@@ -31,8 +31,7 @@ const EvolutionSection = ({
       </Pokemon>
 
       <MinLevel>
-        {//<Icon name="arrow-right" size={20} color={colors.grey} />
-        }
+        <Icon name="arrow-right" size={20} color={colors.grey} />
         <Text bold style={{marginTop: 8}}>
           Lvl {minLevel}
         </Text>

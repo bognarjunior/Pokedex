@@ -1,13 +1,12 @@
 import React, {useCallback, useRef, useState, useEffect} from 'react';
 import {Animated, Dimensions, ScrollView} from 'react-native';
 import {SafeAreaView, View, TouchableOpacity} from 'react-native';
-import Icon from 'react-native-vector-icons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 import Text from '../../components/Text';
 import pokeballIcon from '../../../assets/pokeball-transparent.jpg';
 import {tabs} from './tabs';
 import {useNavigation} from '@react-navigation/native';
-import Reactotron from 'reactotron-react-native';
 import {
   Container,
   ContainerImage,
@@ -25,7 +24,6 @@ import {Props} from './types';
 import {POKEMON_TYPE_COLORS} from '../../constants';
 
 const Detail = ({route}: Props) => {
-  Reactotron.log('Detail', route);
   const {
     params: {pokemon},
   } = route;
@@ -88,8 +86,7 @@ const Detail = ({route}: Props) => {
         style={{height: 300}}>
         <SectionAbout>
           <TouchableOpacity onPress={() => navigation.goBack()}>
-            {//<Icon name="arrow-left" size={24} color="white" />
-            }
+            <Icon name="arrow-left" size={24} color="white" />
           </TouchableOpacity>
 
           <ContainerImage>

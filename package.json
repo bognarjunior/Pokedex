@@ -12,7 +12,7 @@
     "build": "yarn && yarn build:ios",
     "rebuild": "rm -rf node_modules && rm -rf ios/Pods && yarn build",
     "clean:ios": "cd ios && xcodebuild clean && cd ..",
-    "clean: android": "cd android && ./gradle clean && cd .."
+    "clean:android": "cd android && ./gradle clean && cd .."
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.12.1",

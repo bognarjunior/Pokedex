@@ -1,6 +1,5 @@
 import React, {useMemo} from 'react';
-import {View} from 'react-native';
-import {Foundation as Icon} from 'react-native-vector-icons';
+import Foundation from 'react-native-vector-icons/Foundation';
 
 import Text from '../../../components/Text';
 
@@ -113,13 +112,13 @@ const About = ({pokemon}: Props) => {
                 <Text style={{fontWeight: 'bold'}}>sem sexo</Text>
               ) : (
                 <>
-                  {/* <Icon
+                  <Foundation
                     name={
                       gender.gender === 'male' ? 'male-symbol' : 'female-symbol'
                     }
                     color={gender.gender === 'male' ? '#6890F0' : '#EE99AC'}
                     size={16}
-                  /> */}
+                  />
                   {'  '}
                   {gender.rate}%
                 </>
