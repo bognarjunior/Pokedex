@@ -1,7 +1,7 @@
 import React, {useCallback, useRef, useState, useEffect} from 'react';
 import {Animated, Dimensions, ScrollView} from 'react-native';
 import {SafeAreaView, View, TouchableOpacity} from 'react-native';
-import {Icon} from 'react-native-vector-icons';
+import Icon from 'react-native-vector-icons';
 import LinearGradient from 'react-native-linear-gradient';
 import Text from '../../components/Text';
 import pokeballIcon from '../../../assets/pokeball-transparent.jpg';
