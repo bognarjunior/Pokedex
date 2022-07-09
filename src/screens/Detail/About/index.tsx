@@ -39,8 +39,6 @@ const About = ({pokemon}: Props) => {
   }, [pokemon]);
 
   const pokemonGendersRate = getPokemonGenderStats(pokemon.gender_rate);
-
-  console.log('pokemonFormatted', pokemonFormatted.abilites);
   return (
     <Container>
       <Section>

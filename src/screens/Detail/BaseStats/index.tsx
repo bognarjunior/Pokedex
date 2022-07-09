@@ -23,11 +23,11 @@ const BaseStats = ({pokemon}: Props) => {
           </Text>
 
           <StatGraph>
-            <Text variant="body3">{stat.baseStat}</Text>
+            <Text variant="body3">{stat.base_stat}</Text>
 
             <StatLine>
               <StatValue
-                width={stat.baseStat}
+                width={stat.base_stat}
                 backgroundColor={
                   POKEMON_TYPE_COLORS[pokemon.types[0].type.name.toLowerCase()]
                 }

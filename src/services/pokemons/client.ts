@@ -11,7 +11,6 @@ import {
   Type,
 } from './types';
 import {capitalizeFirstLetter} from '../../utils';
-
 interface ItemEvolution {
   name: string;
   url: string;
@@ -33,7 +32,7 @@ class PokemonClient {
       .get<PokemonApiResult>(`/pokemon?offset=${offset}&limit=${limit}`)
       .then(data => data.data);
 
-    const pokemons = getPagination.results.map(async (item) => {
+    const pokemons = getPagination.results.map(async item => {
       //detalhe do pokemon
       const pokemonData = await axios
         .get<Pokemon>(item.url)
@@ -67,10 +66,8 @@ class PokemonClient {
           },
         } as Type;
       });
-
       const pokemonStatsFormatted = pokemonData.stats.map(stat => {
         let name = '';
-
         if (stat.stat.name === 'hp') {
           name = 'HP';
         } else if (stat.stat.name === 'attack') {
@@ -113,8 +110,9 @@ class PokemonClient {
       return {
         id: pokemonData.id,
         name: pokemonSpecieData.names[pokemonNameIndex].name,
-        description: pokemonSpecieData.flavor_text_entries[pokemonFlavorTextIndex]
-          .flavor_text,
+        description:
+          pokemonSpecieData.flavor_text_entries[pokemonFlavorTextIndex]
+            .flavor_text,
         image: pokemonData.sprites.other['official-artwork'].front_default,
         genera: pokemonSpecieData.genera[pokemonGeneraIndex].genus,
         pokedex_number: pokemonData.id.toString().padStart(3, '0'),
