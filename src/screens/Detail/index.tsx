@@ -10,6 +10,7 @@ import {useNavigation} from '@react-navigation/native';
 import {
   Container,
   ContainerImage,
+  ContainerTabs,
   Tabs,
   TabButton,
   SlideWrapper,
@@ -117,28 +118,23 @@ const Detail = ({route}: Props) => {
             </ContentInfo>
           </ContainerImage>
         </SectionAbout>
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'flex-end',
-            marginBottom: 20,
-          }}>
+        <ContainerTabs>
           <Tabs style={{}}>
             {tabs.map((tab, index) => {
               return (
                 <TabButton key={index} onPress={() => handleChangeSlide(index)}>
                   {tabActive === index && <ImageBall source={pokeballIcon} />}
-                  <Text style={{color: '#fff', fontWeight: '700'}}>
-                    {tab.name}
+                  <Text color="white" bold>
+                    {tab?.name}
                   </Text>
                 </TabButton>
               );
             })}
           </Tabs>
-        </View>
+        </ContainerTabs>
       </LinearGradient>
       <Container>
-      <Animated.ScrollView
+        <Animated.ScrollView
           ref={scrollViewRef}
           horizontal
           showsHorizontalScrollIndicator={false}

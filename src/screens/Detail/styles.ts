@@ -33,6 +33,12 @@ export const ImageBall = styled.Image`
   top: -20px;
 `;
 
+export const ContainerTabs = styled.View`
+  flex: 1;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+`;
+
 export const Tabs = styled.View`
   padding: 16px 0 24px;
   margin: 0 24px;
